@@ -9,8 +9,6 @@ import Input from '../Input/Input';
 
 import './Chat.css';
 
-const ENDPOINT = 'https://chat-app-react-ts.herokuapp.com/';
-
 let socket;
 
 const Chat = ({ location }) => {
@@ -21,6 +19,7 @@ const Chat = ({ location }) => {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
+    const ENDPOINT = 'https://chat-app-react-ts.herokuapp.com/';
     const { name, room } = queryString.parse(location.search);
 
     socket = io(ENDPOINT);
